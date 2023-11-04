@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import { BackgroundImage1, BackgroundImage2, GradientBackgroundCon } from '@/components/QuoteGenerator/QuoteGeneratorElements'
+import { BackgroundImage1, BackgroundImage2, FooterContainer, GradientBackgroundCon } from '@/components/QuoteGenerator/QuoteGeneratorElements'
 import Clouds1 from '../assets/Clouds1.png'
 import Clouds2 from '../assets/thunderbolt-cloud.png'
+import { useState } from 'react'
 
 export default function Home() {
+  const [numberOfQuotes, setNumberOfQuotes] = useState<Number | null>(0);
   return (
     <>
       <Head>
@@ -26,6 +28,14 @@ export default function Home() {
         height="300"
         alt="cloudbackground2"
          />
+
+         <FooterContainer>
+          <>
+            Quotes Generated : {numberOfQuotes}
+            <br />
+            Develope by me 
+          </>
+         </FooterContainer>
 
       </GradientBackgroundCon>
     </>
