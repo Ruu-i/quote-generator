@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import { BackgroundImage1, BackgroundImage2, FooterContainer, GradientBackgroundCon } from '@/components/QuoteGenerator/QuoteGeneratorElements'
+import { BackgroundImage1, BackgroundImage2, FooterContainer, FooterLink, GenerateQuoteButton, GenerateQuoteButtonText, GradientBackgroundCon, QuoteGeneratorCon, QuoteGeneratorInnerCon, QuoteGeneratorSubTitle, QuoteGeneratorTitle } from '@/components/QuoteGenerator/QuoteGeneratorElements'
 import Clouds1 from '../assets/Clouds1.png'
 import Clouds2 from '../assets/thunderbolt-cloud.png'
 import { useState } from 'react'
@@ -17,6 +17,29 @@ export default function Home() {
       </Head>
       <GradientBackgroundCon>
 
+      <QuoteGeneratorCon>
+        <QuoteGeneratorInnerCon>
+          <QuoteGeneratorTitle>
+            Daily Inspiration Generator
+          </QuoteGeneratorTitle>
+            <QuoteGeneratorSubTitle>
+            Looking for a splash of inspiration? Generate a quote card with a random inspirational quote provided by
+             <FooterLink href="https://zenquotes.io/" target="_blank" rel="nooper"> ZenQuotes API
+
+             </FooterLink>
+            </QuoteGeneratorSubTitle>
+
+            <GenerateQuoteButton>
+              <GenerateQuoteButtonText onClick={null}>
+                  make a Quote
+              </GenerateQuoteButtonText>
+            </GenerateQuoteButton>
+        </QuoteGeneratorInnerCon>
+      </QuoteGeneratorCon>
+
+
+
+        {/* Background images*/}
         <BackgroundImage1
         src={Clouds1} 
         height="300"
@@ -29,6 +52,7 @@ export default function Home() {
         alt="cloudbackground2"
          />
 
+        {/* Footer */}
          <FooterContainer>
           <>
             Quotes Generated : {numberOfQuotes}
