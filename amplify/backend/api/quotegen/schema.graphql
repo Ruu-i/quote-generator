@@ -8,3 +8,11 @@
 #  description: String
 #}
 
+type Query {
+generateQuote(input: AWSJSON): String
+    @auth(rules: [
+        { allow: public, provider: iam },
+
+    ])
+    @function(name: "quotegenLambda-${env}")
+}
